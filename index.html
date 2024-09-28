@@ -8,17 +8,19 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 50px;
+            margin: 20px;
             background-color: #f4f4f4;
         }
 
         h1 {
             color: #333;
+            font-size: 24px;
         }
 
         .subject-container {
             margin-bottom: 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             background-color: #fff;
@@ -29,12 +31,15 @@
 
         .subject-container label {
             flex: 1;
+            min-width: 120px;
             text-align: left;
             color: #333;
+            margin-bottom: 10px;
         }
 
         .subject-container input {
-            flex: 1;  /* Adjusted to make input fields more compact */
+            flex: 1;
+            min-width: 150px;
             margin-left: 10px;
             padding: 8px;
             border: 1px solid #ccc;
@@ -43,7 +48,7 @@
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #4caf50;
             color: #fff;
             border: none;
@@ -51,6 +56,7 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -60,11 +66,45 @@
         #result {
             font-size: 18px;
             color: #333;
+            margin-top: 20px;
         }
 
         #subjects-container {
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Media Query for small screens */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .subject-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .subject-container label,
+            .subject-container input {
+                min-width: unset;
+                margin: 5px 0;
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            #result {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -78,7 +118,7 @@
             <label for="total1">Total Marks:</label>
             <input type="number" class="total" placeholder="Enter total marks">
 
-            <label for="portion1">&nbsp;</label> <!-- Added an empty label for space -->
+            <label for="portion1">&nbsp;</label> <!-- Empty label for space -->
 
             <label for="portion1">Obtained Marks:</label>
             <input type="number" class="portion" placeholder="Enter obtained marks">
@@ -125,7 +165,7 @@
                 <label for="total">Total Marks:</label>
                 <input type="number" class="total" placeholder="Enter total marks">
 
-                <label for="portion">&nbsp;</label> <!-- Added an empty label for space -->
+                <label for="portion">&nbsp;</label> <!-- Empty label for space -->
 
                 <label for="portion">Obtained Marks:</label>
                 <input type="number" class="portion" placeholder="Enter obtained marks">
